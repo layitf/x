@@ -101,19 +101,6 @@ const genBubbleStyle: GenerateStyle<BubbleToken> = (token) => {
         maxWidth: '100%',
       },
 
-      [`& ${componentCls}-content-container`]: {
-        display: 'flex',
-        columnGap: token.paddingXS,
-      },
-
-      [`&-end ${componentCls}-content-container`]: {
-        flexDirection: 'row-reverse',
-      },
-
-      [`& ${componentCls}-extra`]: {
-        alignSelf: 'flex-end',
-      },
-
       [`& ${componentCls}-content`]: {
         position: 'relative',
         boxSizing: 'border-box',
@@ -154,6 +141,19 @@ const genBubbleStyle: GenerateStyle<BubbleToken> = (token) => {
             },
           },
         },
+      },
+
+      [`& ${componentCls}-extra`]: {
+        position: 'absolute',
+        bottom: 0,
+      },
+
+      [`&-start ${componentCls}-extra`]: {
+        left: `calc(100% + ${token.paddingXS})`,
+      },
+
+      [`&-end ${componentCls}-extra`]: {
+        right: `calc(100% + ${token.paddingXS})`,
       },
     },
   };

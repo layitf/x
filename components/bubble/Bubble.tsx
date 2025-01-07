@@ -140,13 +140,7 @@ const Bubble: React.ForwardRefRenderFunction<BubbleRef, BubbleProps> = (props, r
       )}
     >
       {contentNode}
-    </div>
-  );
-
-  if (extra) {
-    fullContent = (
-      <div className={`${prefixCls}-content-container`}>
-        {fullContent}
+      {extra ? (
         <div
           className={classnames(
             `${prefixCls}-extra`,
@@ -160,9 +154,9 @@ const Bubble: React.ForwardRefRenderFunction<BubbleRef, BubbleProps> = (props, r
         >
           {extra}
         </div>
-      </div>
-    );
-  }
+      ) : null}
+    </div>
+  );
 
   if (header || footer) {
     fullContent = (
