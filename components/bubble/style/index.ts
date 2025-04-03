@@ -153,7 +153,7 @@ const genBubbleStyle: GenerateStyle<BubbleToken> = (token) => {
       },
 
       [`&-end ${componentCls}-extra`]: {
-        right: `calc(100% + ${token.paddingXS})`,
+        insetInlineEnd: `calc(100% + ${token.paddingXS})`,
       },
     },
   };
